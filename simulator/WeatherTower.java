@@ -2,7 +2,7 @@ package simulator;
 
 import weather.*;
 
-public class WeatherTower {
+public class WeatherTower extends Tower {
     public String getWeather(Coordinates coordinates) {
         int indx = (coordinates.getLongitude() + coordinates.getLatitude() + coordinates.getHeight()) % 4;
         if (indx == 0) {
