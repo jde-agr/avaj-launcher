@@ -1,7 +1,9 @@
-public class Helicopter extends Aircraft {
+package simulator.aircrafts;
+
+public class Baloon extends Aircraft {
     private WeatherTower weatherTower;
 
-    Helicopter(String name, Coordinates coordinates) {
+    Baloon(String name, Coordinates coordinates) {
         super(name, coordinates);
     }
     public void updateConditions() {}

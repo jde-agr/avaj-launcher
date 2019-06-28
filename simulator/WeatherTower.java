@@ -1,6 +1,10 @@
+package simulator;
+
+import weather.*;
+
 public class WeatherTower {
     public String getWeather(Coordinates coordinates) {
-        int indx = (coordinates.longitude + coordinates.latitude + coordinates.height) % 4;
+        int indx = (coordinates.getLongitude() + coordinates.getLatitude() + coordinates.getHeight()) % 4;
         if (indx == 0) {
             return "RAIN";
         }
@@ -13,6 +17,8 @@ public class WeatherTower {
         else if (indx == 3) {
             return "SNOW";
         }
+        else
+            return "";
     }
     void changeWeather() {}
 }

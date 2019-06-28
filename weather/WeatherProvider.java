@@ -1,3 +1,5 @@
+package weather;
+
 public class WeatherProvider {
     private static WeatherProvider weatherProvider;
     private static String[] weather;
@@ -10,7 +12,7 @@ public class WeatherProvider {
         return this.weatherProvider;
     }
     public String getCurrentWeather(Coordinates coordinates) {
-        int indx = (coordinates.longitude + coordinates.latitude + coordinates.height) % 4;
+        int indx = (coordinates.getLongitude() + coordinates.getLatitude() + coordinates.getHeight()) % 4;
         return this.weather[indx];
     }
 }

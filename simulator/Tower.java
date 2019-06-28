@@ -1,3 +1,5 @@
+package simulator;
+
 import java.util.*; //To make use of ArrayList
 public abstract class Tower {
     private ArrayList<Flyable> observers = new ArrayList<Flyable>();
