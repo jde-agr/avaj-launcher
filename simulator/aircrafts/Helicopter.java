@@ -1,6 +1,8 @@
 package simulator.aircrafts;
 
-public class Helicopter extends Aircraft {
+import simulator.*;
+
+public class Helicopter extends Aircraft implements Flyable {
     private WeatherTower weatherTower;
 
     Helicopter(String name, Coordinates coordinates) {

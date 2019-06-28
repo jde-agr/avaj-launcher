@@ -1,5 +1,7 @@
 package simulator.aircrafts;
 
+import simulator.aircrafts.*;
+
 public abstract class Aircraft {
     protected long id;
     protected String name;
@@ -10,5 +12,7 @@ public abstract class Aircraft {
         this.name = name;
         this.coordinates = coordinates;
     }
-    private long nextId() {}
+    private long nextId() {
+        return -1;
+    }
 }

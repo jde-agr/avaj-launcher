@@ -20,6 +20,9 @@ public class Main {
                             first = false;
                         } 
                         // System.out.println(line);
+                        Flyable flyable = AircraftFactory.newAircraft("Baloon", "B1", 2, 3, 20);
+                        Flyable flyable2 = AircraftFactory.newAircraft("JetPlane", "J1", 23, 44, 32);
+                        Flyable flyable3 = AircraftFactory.newAircraft("Helicopter", "H4", 223, 23, 54);
                     }
                 }
                 catch (IOException e) {

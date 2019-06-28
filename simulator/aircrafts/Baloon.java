@@ -1,6 +1,8 @@
 package simulator.aircrafts;
 
-public class Baloon extends Aircraft {
+import simulator.*;
+
+public class Baloon extends Aircraft implements Flyable {
     private WeatherTower weatherTower;
 
     Baloon(String name, Coordinates coordinates) {
