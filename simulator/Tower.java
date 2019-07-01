@@ -9,10 +9,10 @@ public abstract class Tower {
         //For Testing
         // System.out.println("Tower says: " + flyable + " registered to weather tower.");
         observers.add(flyable);
-        System.out.println(observers.size() + ") registered to weather tower.");
     }
     public void unregister(Flyable flyable) {
-        observers.remove(flyable);
+        System.out.println("UNREG");
+        System.out.println(observers.remove(flyable));
     }
     protected void conditionsChanged() {}
     //For testing
