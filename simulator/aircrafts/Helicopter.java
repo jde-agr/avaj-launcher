@@ -1,6 +1,7 @@
 package simulator.aircrafts;
 
 import simulator.*;
+import weather.Coordinates;
 
 public class Helicopter extends Aircraft implements Flyable {
     private WeatherTower weatherTower;

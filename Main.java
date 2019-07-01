@@ -2,6 +2,7 @@ import java.io.*;
 import java.util.*;
 import simulator.*;
 import simulator.aircrafts.*;
+import weather.WeatherProvider;
 
 public class Main {
     private static WeatherTower weatherTower;
@@ -13,6 +14,7 @@ public class Main {
                 BufferedReader br = new BufferedReader(new FileReader(args[0]));
                 Integer repeats = 0;
                 weatherTower = new WeatherTower();
+                WeatherProvider weatherProvider = WeatherProvider.getProvider();
                 try {
                     boolean first = true;
                     for (String line; (line = br.readLine()) != null;) {
@@ -27,6 +29,8 @@ public class Main {
                         }
                     }
                     // weatherTower.display();
+                    System.out.println(weatherProvider);
+                    System.out.println(weatherProvider.getProvider());
                 }
                 catch (IOException e) {
                     System.out.println(e);

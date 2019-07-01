@@ -1,18 +1,18 @@
 package weather;
 
 public class WeatherProvider {
-    private static WeatherProvider weatherProvider;
-    private static String[] weather;
+    private static WeatherProvider weatherProvider = new WeatherProvider();
+    private static String[] weather = {"RAIN", "FOG", "SUN", "SNOW"};
 
     private WeatherProvider() {
-        this.weatherProvider = this;
-        this.weather = ["RAIN", "FOG", "SUN", "SNOW"];
+        // this.weatherProvider = this;
+        // this.weather = ["RAIN", "FOG", "SUN", "SNOW"];
     }
     public static WeatherProvider getProvider() {
-        return this.weatherProvider;
+        return WeatherProvider.weatherProvider;
     }
     public String getCurrentWeather(Coordinates coordinates) {
         int indx = (coordinates.getLongitude() + coordinates.getLatitude() + coordinates.getHeight()) % 4;
-        return this.weather[indx];
+        return WeatherProvider.weather[indx];
     }
 }
