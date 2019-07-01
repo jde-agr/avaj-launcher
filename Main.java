@@ -26,7 +26,7 @@ public class Main {
                             Flyable flyable = AircraftFactory.newAircraft(line.split(" ")[0], line.split(" ")[1], Integer.parseInt(line.split(" ")[2]), Integer.parseInt(line.split(" ")[3]), Integer.parseInt(line.split(" ")[4]));
                             // weatherTower.register(flyable);
                             flyable.registerTower(weatherTower);
-                            flyable.updateConditions();
+                            // flyable.updateConditions();
                         }
                     }
                     weatherTower.display();
