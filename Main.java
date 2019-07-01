@@ -22,10 +22,11 @@ public class Main {
                         } else {
                             // System.out.println("0: " + line.split(" ")[0] + " 1: " + line.split(" ")[1] + " 2: " + line.split(" ")[2] + " 3: " + line.split(" ")[3] + " 4: " + line.split(" ")[4]);
                             Flyable flyable = AircraftFactory.newAircraft(line.split(" ")[0], line.split(" ")[1], Integer.parseInt(line.split(" ")[2]), Integer.parseInt(line.split(" ")[3]), Integer.parseInt(line.split(" ")[4]));
-                            weatherTower.register(flyable);
+                            // weatherTower.register(flyable);
+                            flyable.registerTower(weatherTower);
                         }
                     }
-                    weatherTower.display();
+                    // weatherTower.display();
                 }
                 catch (IOException e) {
                     System.out.println(e);
