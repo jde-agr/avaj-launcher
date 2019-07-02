@@ -27,10 +27,14 @@ public class Main {
                             first = false;
                         } else {
                             // System.out.println("0: " + line.split(" ")[0] + " 1: " + line.split(" ")[1] + " 2: " + line.split(" ")[2] + " 3: " + line.split(" ")[3] + " 4: " + line.split(" ")[4]);
-                            Flyable flyable = AircraftFactory.newAircraft(line.split(" ")[0], line.split(" ")[1], Integer.parseInt(line.split(" ")[2]), Integer.parseInt(line.split(" ")[3]), Integer.parseInt(line.split(" ")[4]));
-                            // weatherTower.register(flyable);
-                            flyable.registerTower(weatherTower);
-                            // flyable.updateConditions();
+                            try {
+                                Flyable flyable = AircraftFactory.newAircraft(line.split(" ")[0], line.split(" ")[1], Integer.parseInt(line.split(" ")[2]), Integer.parseInt(line.split(" ")[3]), Integer.parseInt(line.split(" ")[4]));
+                                flyable.registerTower(weatherTower);
+                            }
+                            catch (Exception ex) {
+                                new CustomException("Invalid Coordinates. Cannot create new " + line.split(" ")[0]);
+                                // System.out.println(ex.toString());
+                            }
                         }
                     }
                     // repeats = 2;
@@ -40,8 +44,6 @@ public class Main {
                     }
                     file.closeFile();
                     // weatherTower.display();
-                    // System.out.println(weatherProvider);
-                    // System.out.println(weatherProvider.getProvider());
                 }
                 catch (IOException e) {
                     System.out.println(e);
