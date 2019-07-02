@@ -39,6 +39,7 @@ public class Main {
                     }
                     // repeats = 2;
                     while (repeats > 0) {
+                        file.writeToFile("\n=====NEW WEATHER=====\n");
                         weatherTower.changeWeather();
                         repeats--;
                     }

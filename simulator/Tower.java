@@ -14,8 +14,9 @@ public abstract class Tower {
         observers.remove(flyable);
     }
     protected void conditionsChanged() {
-        for (int i = 0; i < observers.size(); i++) {
-            observers.get(i).updateConditions();
+        ArrayList<Flyable> cloned = (ArrayList<Flyable>)observers.clone();
+        for (int i = 0; i < cloned.size(); i++) {
+            cloned.get(i).updateConditions();
         }
     }
     //For testing
