@@ -29,12 +29,14 @@ public class Helicopter extends Aircraft implements Flyable {
         System.out.println("Weth Name: " + this.name + "\tLong: " + this.coordinates.getLongitude() + "\tLati: " + this.coordinates.getLatitude() + "\tHeig: " + this.coordinates.getHeight());
         if (this.coordinates.getHeight() <= 0) {
             System.out.println("Tower says: Helicopter#" + this.name + "(" + + this.id + ") unregistered from weather tower.");
+            file.writeToFile("Tower says: Helicopter#" + this.name + "(" + + this.id + ") unregistered from weather tower.\n");
             weatherTower.unregister(this);
         }
     }
     public void registerTower(WeatherTower weatherTower) {
         this.weatherTower = weatherTower;
         System.out.println("Tower says: Helicopter#" + this.name + "(" + this.id + ") registered to weather tower.");
+        file.writeToFile("Tower says: Helicopter#" + this.name + "(" + this.id + ") registered to weather tower.\n");
         weatherTower.register(this);
     }
     //For testing

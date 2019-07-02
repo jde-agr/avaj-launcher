@@ -8,6 +8,7 @@ import weather.WeatherProvider;
 
 public class Main {
     private static WeatherTower weatherTower;
+    private static Logger file = Logger.getLogger();
     // private static List<Flyable> flyables = new ArrayList<>();
 
     public static void main(String[] args) throws FileNotFoundException, IOException {
@@ -17,6 +18,7 @@ public class Main {
                 Integer repeats = 0;
                 weatherTower = new WeatherTower();
                 WeatherProvider weatherProvider = WeatherProvider.getProvider();
+                Logger file = Logger.getLogger();
                 try {
                     boolean first = true;
                     for (String line; (line = br.readLine()) != null;) {
@@ -36,6 +38,7 @@ public class Main {
                         weatherTower.changeWeather();
                         repeats--;
                     }
+                    file.closeFile();
                     // weatherTower.display();
                     // System.out.println(weatherProvider);
                     // System.out.println(weatherProvider.getProvider());

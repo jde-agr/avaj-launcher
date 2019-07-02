@@ -2,12 +2,14 @@ package simulator.aircrafts;
 
 import simulator.aircrafts.*;
 import weather.Coordinates;
+import simulator.Logger;
 
 public abstract class Aircraft {
     protected long id;
     protected String name;
     protected Coordinates coordinates;
     private static long idCounter = 0;
+    protected static Logger file = Logger.getLogger();
 
     protected Aircraft(String name, Coordinates coordinates) {
         this.name = name;
@@ -16,8 +18,6 @@ public abstract class Aircraft {
     }
     private long nextId() {
         idCounter += 1;
-        // System.out.println("ID: " + idCounter);
-        // System.out.println("Tower says: Baloon#" + this.name + "(" + this.idCounter + ") registered to weather tower.");
         return this.idCounter;
     }
 }
