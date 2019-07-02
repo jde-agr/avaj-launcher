@@ -12,7 +12,7 @@ public class Baloon extends Aircraft implements Flyable {
     public void updateConditions() {
         String curWeather = weatherTower.getWeather(this.coordinates);
         //For testing
-        System.out.println("Weather " + curWeather);
+        // System.out.println("Weather " + curWeather);
         if (curWeather.equals("SUN")) {
             this.coordinates = new Coordinates(this.coordinates.getLongitude() + 2, this.coordinates.getLatitude(), this.coordinates.getHeight() + 4);
         }
@@ -23,7 +23,7 @@ public class Baloon extends Aircraft implements Flyable {
             this.coordinates = new Coordinates(this.coordinates.getLongitude(), this.coordinates.getLatitude(), this.coordinates.getHeight() - 3);
         }
         else if (curWeather.equals("SNOW")) {
-            this.coordinates = new Coordinates(this.coordinates.getLongitude(), this.coordinates.getLatitude(), this.coordinates.getHeight() - 66); //-15
+            this.coordinates = new Coordinates(this.coordinates.getLongitude(), this.coordinates.getLatitude(), this.coordinates.getHeight() - 15); //-15
         }
         //For testing
         System.out.println("Weth Name: " + this.name + "\tLong: " + this.coordinates.getLongitude() + "\tLati: " + this.coordinates.getLatitude() + "\tHeig: " + this.coordinates.getHeight());

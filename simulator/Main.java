@@ -1,3 +1,5 @@
+package simulator;
+
 import java.io.*;
 import java.util.*;
 import simulator.*;
@@ -29,9 +31,14 @@ public class Main {
                             // flyable.updateConditions();
                         }
                     }
-                    weatherTower.display();
-                    System.out.println(weatherProvider);
-                    System.out.println(weatherProvider.getProvider());
+                    // repeats = 2;
+                    while (repeats > 0) {
+                        weatherTower.changeWeather();
+                        repeats--;
+                    }
+                    // weatherTower.display();
+                    // System.out.println(weatherProvider);
+                    // System.out.println(weatherProvider.getProvider());
                 }
                 catch (IOException e) {
                     System.out.println(e);

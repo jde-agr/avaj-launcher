@@ -20,8 +20,10 @@ public class WeatherTower extends Tower {
         // }
         // else
         //     return "";
-        System.out.println("Out " + WeatherProvider.getProvider().getCurrentWeather(coordinates));
+        // System.out.println("Out " + WeatherProvider.getProvider().getCurrentWeather(coordinates));
         return WeatherProvider.getProvider().getCurrentWeather(coordinates);
     }
-    void changeWeather() {}
+    void changeWeather() {
+        this.conditionsChanged();
+    }
 }
