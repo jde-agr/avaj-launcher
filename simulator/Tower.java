@@ -13,6 +13,7 @@ public abstract class Tower {
     public void unregister(Flyable flyable) {
         observers.remove(flyable);
     }
+    @SuppressWarnings({"unchecked"})
     protected void conditionsChanged() {
         ArrayList<Flyable> cloned = (ArrayList<Flyable>)observers.clone();
         for (int i = 0; i < cloned.size(); i++) {

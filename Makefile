@@ -1,6 +1,6 @@
 all: clean
 	find . -depth -name "*.java" >> sources.txt
-	javac ./weather/Coordinates.java
+	javac ./simulator/WeatherTower.java 
 	javac -d . -sourcepath @sources.txt
 clean:
 	rm -rf sources.txt simulation.txt
