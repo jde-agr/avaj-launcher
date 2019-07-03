@@ -11,7 +11,7 @@ public class Main {
     private static Logger file = Logger.getLogger();
     // private static List<Flyable> flyables = new ArrayList<>();
 
-    public static void main(String[] args) throws FileNotFoundException, IOException {
+    public static void main(String[] args) throws FileNotFoundException, IOException, Exception {
         if (args.length == 1) {
             try {
                 BufferedReader br = new BufferedReader(new FileReader(args[0]));
@@ -23,8 +23,14 @@ public class Main {
                     boolean first = true;
                     for (String line; (line = br.readLine()) != null;) {
                         if (first) {
-                            repeats = Integer.parseInt(line);
-                            first = false;
+                            try {
+                                repeats = Integer.parseInt(line);
+                                first = false;
+                            }
+                            catch (Exception ex) {
+                                throw new CustomException("Invalid iteration number. Exiting program...");
+                                // System.exit(0);
+                            }
                         } else {
                             // System.out.println("0: " + line.split(" ")[0] + " 1: " + line.split(" ")[1] + " 2: " + line.split(" ")[2] + " 3: " + line.split(" ")[3] + " 4: " + line.split(" ")[4]);
                             try {
@@ -32,7 +38,12 @@ public class Main {
                                 flyable.registerTower(weatherTower);
                             }
                             catch (Exception ex) {
-                                new CustomException("Invalid Coordinates. Cannot create new " + line.split(" ")[0]);
+                                if (line.isEmpty() || line == null) {
+                                    System.out.println(new CustomException("Empty line. Cannot create new flyable object.").toString());    
+                                }
+                                else {
+                                    System.out.println(new CustomException("Invalid Coordinates. Cannot create new " + line.split(" ")[0]).toString());
+                                }
                                 // System.out.println(ex.toString());
                             }
                         }
