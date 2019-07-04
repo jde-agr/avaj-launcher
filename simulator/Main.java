@@ -42,7 +42,9 @@ public class Main {
                                     System.out.println(new CustomException("Empty line. Cannot create new flyable object.").toString());    
                                 }
                                 else {
-                                    System.out.println(new CustomException("Invalid Coordinates. Cannot create new " + line.split(" ")[0]).toString());
+                                    String message = new CustomException("Invalid Parameters. Cannot create new flyable object.").toString();
+                                    file.writeToFile(message + "\n");
+                                    System.out.println(message);
                                 }
                                 // System.out.println(ex.toString());
                             }

@@ -12,7 +12,7 @@ public class WeatherProvider {
         return WeatherProvider.weatherProvider;
     }
     public String getCurrentWeather(Coordinates coordinates) {
-        int indx = (coordinates.getLongitude() + coordinates.getLatitude() + coordinates.getHeight()) % 4;
+        int indx = Math.abs((coordinates.getLongitude() + coordinates.getLatitude() + coordinates.getHeight()) % 4);
         return WeatherProvider.weather[indx];
     }
 }

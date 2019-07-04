@@ -30,10 +30,10 @@ public class JetPlane extends Aircraft implements Flyable {
             file.writeToFile("JetPlane#" + this.name + "(" + + this.id + "): OMG! Winter is coming!\n");
         }
         //For testing
-        System.out.println("Weth Name: " + this.name + "\tLong: " + this.coordinates.getLongitude() + "\tLati: " + this.coordinates.getLatitude() + "\tHeig: " + this.coordinates.getHeight());
+        // System.out.println("Weth Name: " + this.name + "\tLong: " + this.coordinates.getLongitude() + "\tLati: " + this.coordinates.getLatitude() + "\tHeig: " + this.coordinates.getHeight());
         if (this.coordinates.getHeight() <= 0) {
             // System.out.println("Tower says: JetPlane#" + this.name + "(" + + this.id + ") unregistered from weather tower.");
-            file.writeToFile("Tower says: JetPlane#" + this.name + "(" + + this.id + ") landing.\n");
+            file.writeToFile("JetPlane#" + this.name + "(" + + this.id + ") landing. Longitude: " + this.coordinates.getLongitude() + "\tLatitude: " + this.coordinates.getLatitude() + "\tHeight: " + this.coordinates.getHeight() + "\n");
             file.writeToFile("Tower says: JetPlane#" + this.name + "(" + + this.id + ") unregistered from weather tower.\n");
             weatherTower.unregister(this);
         }
@@ -43,6 +43,12 @@ public class JetPlane extends Aircraft implements Flyable {
         // System.out.println("Tower says: JetPlane#" + this.name + "(" + + this.id + ") registered to weather tower.");
         file.writeToFile("Tower says: JetPlane#" + this.name + "(" + + this.id + ") registered to weather tower.\n");
         weatherTower.register(this);
+        if (this.coordinates.getHeight() <= 0) {
+            // System.out.println("Tower says: JetPlane#" + this.name + "(" + + this.id + ") unregistered from weather tower.");
+            file.writeToFile("JetPlane#" + this.name + "(" + + this.id + ") landing. Longitude: " + this.coordinates.getLongitude() + "\tLatitude: " + this.coordinates.getLatitude() + "\tHeight: " + this.coordinates.getHeight() + "\n");
+            file.writeToFile("Tower says: JetPlane#" + this.name + "(" + + this.id + ") unregistered from weather tower.\n");
+            weatherTower.unregister(this);
+        }
     }
     //For testing
     public void display() {

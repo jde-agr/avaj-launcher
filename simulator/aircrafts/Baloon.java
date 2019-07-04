@@ -30,10 +30,10 @@ public class Baloon extends Aircraft implements Flyable {
             file.writeToFile("Baloon#" + this.name + "(" + this.id + "): It's snowing. We're gonna crash.\n");
         }
         //For testing
-        System.out.println("Weth Name: " + this.name + "\tLong: " + this.coordinates.getLongitude() + "\tLati: " + this.coordinates.getLatitude() + "\tHeig: " + this.coordinates.getHeight());
+        // System.out.println("Weth Name: " + this.name + "\tLong: " + this.coordinates.getLongitude() + "\tLati: " + this.coordinates.getLatitude() + "\tHeig: " + this.coordinates.getHeight());
         if (this.coordinates.getHeight() <= 0) {
             // System.out.println("Tower says: Baloon#" + this.name + "(" + + this.id + ") unregistered from weather tower.");
-            file.writeToFile("Baloon#" + this.name + "(" + + this.id + ") landing.\n");
+            file.writeToFile("Baloon#" + this.name + "(" + + this.id + ") landing. Longitude: " + this.coordinates.getLongitude() + "\tLatitude: " + this.coordinates.getLatitude() + "\tHeight: " + this.coordinates.getHeight() + "\n");
             file.writeToFile("Tower says: Baloon#" + this.name + "(" + + this.id + ") unregistered from weather tower.\n");
             weatherTower.unregister(this);
         }
@@ -44,6 +44,12 @@ public class Baloon extends Aircraft implements Flyable {
         file.writeToFile("Tower says: Baloon#" + this.name + "(" + this.id + ") registered to weather tower.\n");
         // weatherTower.getWeather(this.coordinates);
         weatherTower.register(this);
+        if (this.coordinates.getHeight() <= 0) {
+            // System.out.println("Tower says: Baloon#" + this.name + "(" + + this.id + ") unregistered from weather tower.");
+            file.writeToFile("Baloon#" + this.name + "(" + + this.id + ") landing. Longitude: " + this.coordinates.getLongitude() + "\tLatitude: " + this.coordinates.getLatitude() + "\tHeight: " + this.coordinates.getHeight() + "\n");
+            file.writeToFile("Tower says: Baloon#" + this.name + "(" + + this.id + ") unregistered from weather tower.\n");
+            weatherTower.unregister(this);
+        }
     }
     //For testing
     public void display() {
